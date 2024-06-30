@@ -1,0 +1,712 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 100px 0;
+    background-color: #f2f2f2;
+  }
+  
+  .hero h1 {
+    font-size: 2.5em;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+ /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 50px; /* Замените размеры на соответствующие вашему логотипу */
+    height: 50px;
+  }
+  
+  .logo h1 {
+    margin-left: 10px;
+    font-size: 1.5em;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li.space {
+    margin-right: 50px; /* Расстояние между "Заказать" и "Регистрация" */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #007bff;
+  }
+
+
+
+/* MAIN */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .products-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+  }
+  .product-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    width: 220px;
+    padding: 10px;
+    
+  }
+  .product-card_front {
+    text-align: center;
+  }
+  .product-card_body {
+    padding-top: 10px;
+  }
+  .product-card_header a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  .product-card_price {
+    font-size: 1.2em;
+    color: #27ae60;
+    margin-bottom: 5px;
+  }
+  .product-card_name {
+    color: #34495e;
+  }
+  .product-card_front .product-card_header img {
+    width: 230px;
+    height: 165px;
+  }
+  .product-card_more {
+    margin-top: 10px; 
+  }
+
+
+  /* Стили для фильтра сортировки */
+.sort-filter {
+  margin-bottom: 20px;
+}
+
+.sort-filter label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.sort-filter select {
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* Стили для карточек продукции, чтобы скрывать и показывать их в зависимости от выбранной категории */
+.products-row .product-card {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Скрытие карточек продукции, не соответствующих выбранной категории */
+.products-row .product-card[data-category="domestic-robots"],
+.products-row .product-card[data-category="industrial-robots"],
+.products-row .product-card[data-category="exoskeletons"] {
+  display: none;
+}
+
+
+  .pagination-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .catalog-list_pag ul.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  .catalog-list_pag ul.pagination li {
+    margin: 0 5px;
+  }
+  .catalog-list_pag ul.pagination li a {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 10px;
+  }
+  .catalog-list_pag ul.pagination li.active a {
+    background-color: #3498db;
+    color: #fff;
+  }
+  .catalog-list_pag ul.pagination li.disabled a {
+    pointer-events: none;
+    color: #ccc;
+  }
+
+
+.contacts {
+    padding: 50px 0;
+    background-color: #048de7;
+}
+
+.contacts_title h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.contacts_descr h3 {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contacts_info-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contacts_info-item {
+    margin-bottom: 20px;
+}
+
+.contacts_info-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.contacts_info-wrapper-icon {
+    margin-right: 10px;
+}
+
+.contacts_info-link {
+    color: #a200ff;
+    text-decoration: none;
+}
+
+address {
+    font-style: normal;
+}
+
+.col-lg-6 {
+    padding: 0 15px;
+}
+
+.contacts_img {
+    text-align: center;
+}
+
+
+.contacts_info-wrapper-icon:first-child img,
+.contacts_info-wrapper-icon:last-child img {
+    width: 40px; /* Увеличение размера иконок 1 и 3 */
+}
+
+.contacts_info-wrapper-icon:nth-child(2) img {
+    max-width: 30px; /* Уменьшение размера иконки 2 */
+}
+
+
+/* FOOTER */
+  .footer{
+    background: linear-gradient(254.81deg, #060A0D 4.61%, rgba(6, 10, 13, 0.64) 38.13%), linear-gradient(60.29deg, #060A0D -3.13%, rgba(6, 10, 13, 0.58) 64.86%);
+}
+
+.footer h2{
+    color: white;
+    padding-top: 70px;
+}
+
+.documentation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 85px;
+    flex-wrap: wrap;
+}
+
+.footer_container{
+    padding: 0 50px;
+}
+
+.size_file{
+    color: #FCA311;
+}
+
+.documentation_link{
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+    color: white;
+}
+
+.item::before{
+    content: '';
+    display: inline-block;
+    background-image: url(../img/Mask\ Group.png);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 45px;
+    margin-right: 20px;
+    background-size: 35px 37px;
+}
+
+.footer_border{
+    width: 100%;
+    border: 1px solid white;
+    margin-bottom: 40px;
+}
+
+.contact_list{
+    list-style: none;
+    font-size: 13px;
+    max-width: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_list li{
+    margin-bottom: 10px;
+    line-height: 140%;
+}
+
+.contact_item:nth-of-type(1) i::before,
+.contact_item_link i::before{
+    content: '';
+    display: inline-block;
+    background-image: url(../img/Vector_.png);
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 13px;
+    margin-right: 5px;
+    
+}
+
+.contact_item_link i::before {
+    background-image: url(../img/Vector_thone.png);
+}
+
+.emaill i::before {
+    background-image: url(../img/1159936.png);
+    width: 14px;
+    height: 14px;
+    background-size: 13px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+address{
+    display: flex;
+    margin-bottom: 1rem;
+    
+}
+
+.footer_address_title{
+    margin-bottom: 20px;
+}
+
+.contact_list_link{
+    display: flex;
+    list-style: none;
+    margin-top: auto;
+}
+
+.contact_list_link li{
+    margin-right: 15px;
+}
+
+@media (max-width: 500px) {  
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .mobile .nav_item{
+        list-style: none;
+        color: black;
+        font-size: 1.2rem;
+        font-weight: 500;
+        flex-shrink: 0;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        padding: 10px 10px;
+    }
+
+    .nav_item a{
+        color: black;
+        padding: 10px 10px;
+    }
+
+    .mobile_tabs{
+        position: relative;
+        flex-flow: row nowrap;
+        display: flex;
+        padding-left: 0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        justify-content: space-between;
+    }
+
+    .analogues_container img{
+        width: 100%;
+    }
+
+    .analogues_container{
+        width: 100%;
+    }
+
+    .mobile_table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 35px;
+    }
+
+    .mobile_table tbody tr td{
+        border-bottom: 1px dashed rgba(46, 45, 54, 0.4);
+    }
+
+    .mobile_table tbody tr td div {
+        padding: 10px;
+        border-left: 1px solid rgba(46, 45, 54, 0.4);
+        border-right: 1px solid rgba(46, 45, 54, 0.4);
+        text-align: center;
+    }
+
+    .mobile_table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .mobile_table tbody tr:last-child td div{
+        border-bottom: 1px solid rgba(46, 45, 54, 0.4);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .mobile_table thead tr th div{
+        font-weight: 400;
+        padding:30px 10px;
+        border: 1px solid rgba(46, 45, 54, 0.4);
+        border-bottom: none;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .active{
+        color: #FCA311;
+    }
+
+    .nav{
+        flex-direction: column;
+    }
+
+    .logo_link{
+        margin-bottom: 50px;
+    }
+
+    .start_screen{
+        background: linear-gradient(180deg, #2F2D36 -4.49%, #0A1014 100%);
+    }
+
+    .bg_img{
+        background: no-repeat bottom/contain url(../img/Map1\ 2.png);
+    }
+
+    .modal_form{
+        width: 400px;
+        height: auto;
+    }
+}
+
+/* contacts.html */
+.about-us {
+  padding: 40px 0;
+  background: #f1f1f1;
+  }
+
+  .about-us h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  }
+
+  .about-us p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  }
+
+  .about-us h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  }
+
+  .about-us ul {
+  list-style: disc;
+  padding-left: 20px;
+  }
+
+  .about-us ul li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  }
+
+
+  .feedback {
+  padding: 40px 0;
+  background: #ff7d04;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  }
+
+  .feedback h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  }
+
+  .feedback form {
+  width: 100%; 
+  max-width: 400px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  }
+
+  .feedback label {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  }
+
+  .feedback input,
+  .feedback textarea {
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9em;
+  width: 100%; 
+  max-width: 100%; 
+  }
+
+  .feedback button {
+  padding: 8px 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%; 
+  max-width: 200px; 
+  }
+
+  .feedback button:hover {
+  background: #01d358;
+  }
+
+
+/* order.html */
+.order-form {
+  text-align: center;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="number"] {
+  width: 60px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+/* мобильные устройства и планшеты */
+/* index.html */
+@media only screen and (max-width: 600px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+
+  .logo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .category-filter {
+    text-align: center;
+  }
+
+  .category-filter select,
+  .category-filter button {
+    margin-top: 10px;
+  }
+
+  .products-row {
+    display: block;
+  }
+
+  .product-card {
+    width: 100%; 
+    margin-right: 0; 
+    margin-bottom: 20px; 
+  }
+
+  .product-card_front .catalog-list_item-header img {
+    max-width: 100%; 
+  }
+
+  .product-card_body {
+    padding-top: 10px;
+  }
+
+  .product-card_price {
+    font-size: 1em; 
+  }
+
+  .product-card_name {
+    font-size: 1.2em; 
+  }
+
+  .pagination-row {
+    text-align: center;
+  }
+
+
+  /* contacts.html */
+  .container {
+    padding: 0 15px; 
+  }
+
+  .col-lg-6 {
+    padding: 0; 
+    margin-bottom: 20px; 
+  }
+
+  .contacts_info-item {
+    margin-bottom: 10px; 
+  }
+
+  .footer_container {
+    padding: 0 15px; 
+  }
+
+  .navigation-open {
+    display: block;
+  }
+
+
+  /* order.html */
+  .order-form {
+    padding: 0 20px; 
+  }
+
+  .form-group {
+    margin-bottom: 20px; 
+  }
+
+  label, input, textarea, select, button {
+    width: 100%; 
+  }
+}

@@ -15,7 +15,6 @@
     <nav>
       <ul>
         <li><a href="index.html">Главная</a></li>
-        <li><a href="products.html">Продукция</a></li>
         <li><a href="contacts.html">Контакты</a></li>
         <li><a href="order.html">Заказать</a></li>
         <li class="space"></li>
@@ -26,8 +25,19 @@
   <main>
     <section class="catalog-list scroll-active">
         <div class="container">
+          <div class="category-filter">
+            <label for="category-select">Выберите категорию:</label>
+            <select id="category-select">
+              <option value="all">Все категории</option>
+              <option value="domestic-robots">Бытовые роботы</option>
+              <option value="industrial-robots">Промышленные роботы</option>
+              <option value="exoskeletons">Экзо-скелеты</option>
+            </select>
+            <button onclick="filterProducts()">Применить</button>
+          </div>
+
             <div class="row products-row">
-                <div class="product-card">
+                <div class="product-card" data-category="industrial-robots">
                     <div class="product-card_front">
                       <div class="catalog-list_item-header product-card_header">
                         <a href="#">
@@ -45,11 +55,159 @@
                 </div>
 
 
-                <div class="product-card">
+                <div class="product-card" data-category="industrial-robots">
                     <div class="product-card_front">
                       <div class="catalog-list_item-header product-card_header">
                         <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
+                          <img src="https://mirrobotics.ru/wp-content/uploads/2018/11/MH400_1.png" alt="Изображение товара 2">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="catalog-list__item-body product-card_body">
+                      <div class="catalog-list_item-price product-card_price">От 1 200 000 ₽</div>
+                      <div class="catalog-list_item-name product-card_name">6 осевой робот</div>
+                      <div class="product-card_more">
+                        <a href="#" class="btn">Купить</a>
+                      </div>
+                    </div>
+                </div>
+              
+                
+                <div class="product-card" data-category="exoskeletons">
+                    <div class="product-card_front">
+                      <div class="catalog-list_item-header product-card_header">
+                        <a href="#">
+                          <img src="https://vignette.wikia.nocookie.net/fallout/images/b/bf/CC_Hellfire_power_armor_BoS_Sentinel.png/revision/latest?cb=20180330152406" alt="Изображение товара 3">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="catalog-list__item-body product-card_body">
+                      <div class="catalog-list_item-price product-card_price">От 2 100 500 ₽</div>
+                      <div class="catalog-list_item-name product-card_name">X 01 силовая броня </div>
+                      <div class="product-card_more">
+                        <a href="#" class="btn">Купить</a>
+                      </div>
+                    </div>
+                </div>
+              
+                
+                <div class="product-card" data-category="industrial-robots">
+                    <div class="product-card_front">
+                      <div class="catalog-list_item-header product-card_header">
+                        <a href="#">
+                          <img src="https://weldingrobot.ru/wp-content/uploads/2023/08/202112100903013041.png" alt="Изображение товара 4">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="catalog-list__item-body product-card_body">
+                      <div class="catalog-list_item-price product-card_price">От 900 000 ₽</div>
+                      <div class="catalog-list_item-name product-card_name">Автомат. сварочный робот</div>
+                      <div class="product-card_more">
+                        <a href="#" class="btn">Купить</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row products-row">
+                <div class="product-card" data-category="exoskeletons">
+                    <div class="product-card_front">
+                      <div class="catalog-list_item-header product-card_header">
+                        <a href="#">
+                          <img src="https://i.pinimg.com/originals/82/a4/2d/82a42d97f9bcfe9a3c025f7fe3502e59.jpg" alt="Изображение товара 5">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="catalog-list__item-body product-card_body">
+                      <div class="catalog-list_item-price product-card_price">От 1 200 000 ₽</div>
+                      <div class="catalog-list_item-name product-card_name">Экзоскелет для тяжестей</div>
+                      <div class="product-card_more">
+                        <a href="#" class="btn">Купить</a>
+                      </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="domestic-robots">
+                    <div class="product-card_front">
+                      <div class="catalog-list_item-header product-card_header">
+                        <a href="#">
+                          <img src="https://i.pinimg.com/originals/bc/7c/2d/bc7c2dced036129b6f84f9dc861395fa.png" alt="Изображение товара 6">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="catalog-list__item-body product-card_body">
+                      <div class="catalog-list_item-price product-card_price">От 5 000 000 ₽</div>
+                      <div class="catalog-list_item-name product-card_name">Робот для стражи</div>
+                      <div class="product-card_more">
+                        <a href="#" class="btn">Купить</a>
+                      </div>
+                    </div>
+                </div>
+              
+                
+                <div class="product-card" data-category="domestic-robots">
+                    <div class="product-card_front">
+                      <div class="catalog-list_item-header product-card_header">
+                        <a href="#">
+                          <img src="https://static.wikia.nocookie.net/slenderfortress/images/4/4d/LibertyPrime.png/revision/latest?cb=20151031210809" alt="Изображение товара 7">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="catalog-list__item-body product-card_body">
+                      <div class="catalog-list_item-price product-card_price">От 1 400 000 ₽</div>
+                      <div class="catalog-list_item-name product-card_name">Робот помошник</div>
+                      <div class="product-card_more">
+                        <a href="#" class="btn">Купить</a>
+                      </div>
+                    </div>
+                </div>
+              
+                
+                <div class="product-card" data-category="domestic-robots">
+                    <div class="product-card_front">
+                      <div class="catalog-list_item-header product-card_header">
+                        <a href="#">
+                          <img src="https://ae04.alicdn.com/kf/S7fcef37e49a345cc917336ea7a35b758s.jpg" alt="Изображение товара 8">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="catalog-list__item-body product-card_body">
+                      <div class="catalog-list_item-price product-card_price">От 1 350 000 ₽</div>
+                      <div class="catalog-list_item-name product-card_name">Робот сортировщик</div>
+                      <div class="product-card_more">
+                        <a href="#" class="btn">Купить</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row products-row">
+                <div class="product-card" data-category="industrial-robots">
+                    <div class="product-card_front">
+                      <div class="catalog-list_item-header product-card_header">
+                        <a href="#">
+                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 9">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="catalog-list__item-body product-card_body">
+                      <div class="catalog-list_item-price product-card_price">Цена товара 1</div>
+                      <div class="catalog-list_item-name product-card_name">Описание товара 1</div>
+                      <div class="product-card_more">
+                        <a href="#" class="btn">Купить</a>
+                      </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="industrial-robots">
+                    <div class="product-card_front">
+                      <div class="catalog-list_item-header product-card_header">
+                        <a href="#">
+                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 10">
                         </a>
                       </div>
                     </div>
@@ -63,11 +221,11 @@
                 </div>
               
                 
-                <div class="product-card">
+                <div class="product-card" data-category="industrial-robots">
                     <div class="product-card_front">
                       <div class="catalog-list_item-header product-card_header">
                         <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
+                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 11">
                         </a>
                       </div>
                     </div>
@@ -81,11 +239,11 @@
                 </div>
               
                 
-                <div class="product-card">
+                <div class="product-card" data-category="industrial-robots">
                     <div class="product-card_front">
                       <div class="catalog-list_item-header product-card_header">
                         <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
+                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 12">
                         </a>
                       </div>
                     </div>
@@ -101,11 +259,11 @@
 
 
             <div class="row products-row">
-                <div class="product-card">
+                <div class="product-card" data-category="industrial-robots">
                     <div class="product-card_front">
                       <div class="catalog-list_item-header product-card_header">
                         <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
+                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 13">
                         </a>
                       </div>
                     </div>
@@ -119,11 +277,11 @@
                 </div>
 
 
-                <div class="product-card">
+                <div class="product-card" data-category="industrial-robots">
                     <div class="product-card_front">
                       <div class="catalog-list_item-header product-card_header">
                         <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
+                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 14">
                         </a>
                       </div>
                     </div>
@@ -137,11 +295,11 @@
                 </div>
               
                 
-                <div class="product-card">
+                <div class="product-card" data-category="industrial-robots">
                     <div class="product-card_front">
                       <div class="catalog-list_item-header product-card_header">
                         <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
+                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 15">
                         </a>
                       </div>
                     </div>
@@ -155,159 +313,11 @@
                 </div>
               
                 
-                <div class="product-card">
+                <div class="product-card" data-category="industrial-robots">
                     <div class="product-card_front">
                       <div class="catalog-list_item-header product-card_header">
                         <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="catalog-list__item-body product-card_body">
-                      <div class="catalog-list_item-price product-card_price">Цена товара 1</div>
-                      <div class="catalog-list_item-name product-card_name">Описание товара 1</div>
-                      <div class="product-card_more">
-                        <a href="#" class="btn">Купить</a>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row products-row">
-                <div class="product-card">
-                    <div class="product-card_front">
-                      <div class="catalog-list_item-header product-card_header">
-                        <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="catalog-list__item-body product-card_body">
-                      <div class="catalog-list_item-price product-card_price">Цена товара 1</div>
-                      <div class="catalog-list_item-name product-card_name">Описание товара 1</div>
-                      <div class="product-card_more">
-                        <a href="#" class="btn">Купить</a>
-                      </div>
-                    </div>
-                </div>
-
-
-                <div class="product-card">
-                    <div class="product-card_front">
-                      <div class="catalog-list_item-header product-card_header">
-                        <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="catalog-list__item-body product-card_body">
-                      <div class="catalog-list_item-price product-card_price">Цена товара 1</div>
-                      <div class="catalog-list_item-name product-card_name">Описание товара 1</div>
-                      <div class="product-card_more">
-                        <a href="#" class="btn">Купить</a>
-                      </div>
-                    </div>
-                </div>
-              
-                
-                <div class="product-card">
-                    <div class="product-card_front">
-                      <div class="catalog-list_item-header product-card_header">
-                        <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="catalog-list__item-body product-card_body">
-                      <div class="catalog-list_item-price product-card_price">Цена товара 1</div>
-                      <div class="catalog-list_item-name product-card_name">Описание товара 1</div>
-                      <div class="product-card_more">
-                        <a href="#" class="btn">Купить</a>
-                      </div>
-                    </div>
-                </div>
-              
-                
-                <div class="product-card">
-                    <div class="product-card_front">
-                      <div class="catalog-list_item-header product-card_header">
-                        <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="catalog-list__item-body product-card_body">
-                      <div class="catalog-list_item-price product-card_price">Цена товара 1</div>
-                      <div class="catalog-list_item-name product-card_name">Описание товара 1</div>
-                      <div class="product-card_more">
-                        <a href="#" class="btn">Купить</a>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row products-row">
-                <div class="product-card">
-                    <div class="product-card_front">
-                      <div class="catalog-list_item-header product-card_header">
-                        <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="catalog-list__item-body product-card_body">
-                      <div class="catalog-list_item-price product-card_price">Цена товара 1</div>
-                      <div class="catalog-list_item-name product-card_name">Описание товара 1</div>
-                      <div class="product-card_more">
-                        <a href="#" class="btn">Купить</a>
-                      </div>
-                    </div>
-                </div>
-
-
-                <div class="product-card">
-                    <div class="product-card_front">
-                      <div class="catalog-list_item-header product-card_header">
-                        <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="catalog-list__item-body product-card_body">
-                      <div class="catalog-list_item-price product-card_price">Цена товара 1</div>
-                      <div class="catalog-list_item-name product-card_name">Описание товара 1</div>
-                      <div class="product-card_more">
-                        <a href="#" class="btn">Купить</a>
-                      </div>
-                    </div>
-                </div>
-              
-                
-                <div class="product-card">
-                    <div class="product-card_front">
-                      <div class="catalog-list_item-header product-card_header">
-                        <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="catalog-list__item-body product-card_body">
-                      <div class="catalog-list_item-price product-card_price">Цена товара 1</div>
-                      <div class="catalog-list_item-name product-card_name">Описание товара 1</div>
-                      <div class="product-card_more">
-                        <a href="#" class="btn">Купить</a>
-                      </div>
-                    </div>
-                </div>
-              
-                
-                <div class="product-card">
-                    <div class="product-card_front">
-                      <div class="catalog-list_item-header product-card_header">
-                        <a href="#">
-                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 1">
+                          <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif" alt="Изображение товара 16">
                         </a>
                       </div>
                     </div>
@@ -504,5 +514,35 @@
         </div>
     </div>
 </footer>
+<script>
+  // Функция для фильтрации продукции
+  function filterProducts() {
+    const selectedCategory = document.getElementById('category-select').value; // Получаем выбранную категорию
+
+    // Получаем все карточки продукции
+    const productCards = document.querySelectorAll('.product-card');
+
+    // Проходим по каждой карточке и скрываем/показываем в соответствии с выбранной категорией
+    productCards.forEach(card => {
+      const category = card.dataset.category; // Получаем категорию продукции из dataset
+      if (selectedCategory === 'all' || category === selectedCategory) {
+        card.style.display = 'block'; // Показываем карточку
+      } else {
+        card.style.display = 'none'; // Скрываем карточку
+      }
+    });
+  }
+
+  // Функция для показа всех карточек при загрузке страницы
+  function showAllProducts() {
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach(card => {
+      card.style.display = 'block'; // Показываем карточку
+    });
+  }
+
+  // Показываем все карточки при загрузке страницы
+  window.onload = showAllProducts;
+</script>
 </body>
 </html>

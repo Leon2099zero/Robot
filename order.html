@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <title>Robots inc.</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/Robot.jpeg" alt="Логотип компании">
+      <h1>Robots incorporation</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="order.html">Заказать</a></li>
+        <li class="space"></li>
+        <li><a href="registration.html">Регистрация</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="order-form">
+      <div class="container">
+        <h2>Форма заказа</h2>
+        <form id="orderForm">
+          <div class="form-group">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contactInfo">Контактная информация:</label>
+            <input type="text" id="contactInfo" name="contactInfo" required>
+          </div>
+          <div class="form-group">
+            <label for="deliveryAddress">Адрес доставки:</label>
+            <textarea id="deliveryAddress" name="deliveryAddress" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="product">Выберите продукт:</label>
+            <select id="product" name="product" required>
+              <option value="domestic-robots">Бытовые роботы</option>
+              <option value="industrial-robots">Промышленные роботы</option>
+              <option value="exoskeletons">Экзо-скелеты</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Количество:<input type="number" id="quantity" name="quantity" min="1" required></label>
+            
+          </div>
+          <button type="submit" onclick="submitOrder()">Отправить заказ</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer_container">
+      <h2 class="section_title">ДОКУМЕНТАЦИЯ
+        <div class="section_head_border"></div>
+      </h2>
+      <div class="documentation">
+        <a href="" class="documentation_link">
+          <i class="item"></i>
+          <span>Техническое руководство
+            <p class="size_file">3.4 Mb* .pdf</p>
+          </span>
+        </a>
+        <a href="" class="documentation_link">
+          <i class="item"></i>
+          <span>Инструкция по установке
+            <p class="size_file">3.4 Mb* .pdf</p>
+          </span>
+        </a>
+        <a href="" class="documentation_link">
+          <i class="item"></i>
+          <span>Инструкция по датчику температуры
+            <p class="size_file">2.5 Mb* .pdf</p>
+          </span>
+        </a>
+        <a href="" class="documentation_link">
+          <i class="item"></i>
+          <span>Инструкция по датчику Холла
+            <p class="size_file">2.5 Mb* .pdf</p>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="footer_border"></div>
+    <div class="footer_container">
+      <div class="nav">
+        <a class="logo_link" href="#">
+          <img src="./img/logo.svg" alt="">
+        </a>
+        <div class="footer_address">
+          <p class="footer_address_title">Контакты</p>
+          <address>
+            <ul class="contact_list">
+              <li class="contact_item">
+                <i></i>
+                109518, г. Москва ул. Грайвороновская, д.23
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link" href="#">
+                  <i></i>
+                  +7 495 226-02-99
+                </a>
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link" href="#">
+                  <i></i>
+                  +7 495 226-12-99
+                </a>
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link" href="#">
+                  <i></i>
+                  +7 495 226-14-99
+                </a>
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link emaill" href="#">
+                  <i></i>
+                  info@npo-at.ru
+                </a>
+              </li>
+            </ul>
+            <ul class="contact_list">
+              <li class="contact_item">
+                <i></i>
+                455048, г. Магнитогорск пер. Мурманский д. 21
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link" href="#">
+                  <i></i>
+                  +7 495 226-12-99
+                </a>
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link emaill" href="#">
+                  <i></i>
+                  sales@npo-at.ru
+                </a>
+              </li>
+              <ul class="contact_list_link">
+                <li>
+                  <a href="#">
+                    <img src="./img/teleg.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./img/Youtube.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./img/VK.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </ul>
+          </address>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function submitOrder() {
+      // Получение данных из формы
+      const formData = new FormData(document.getElementById('orderForm'));
+    
+      // Пример вывода данных в консоль
+      for (var pair of formData.entries()) {
+        console.log(pair[0] + ': ' + pair[1]);
+        // Вместо вывода в консоль можно отправить данные на сервер с использованием fetch или других методов
+      }
+    
+      // Вместо вывода в консоль можно отправить данные на сервер для обработки
+      // fetch('обработчик_заказа_на_сервере', {
+      //   method: 'POST',
+      //   body: formData
+      // })
+      // .then(response => {
+      //   // Обработка ответа от сервера
+      // });
+    }
+  </script>
+</body>
+</html>
